@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clean Water Builder – Purify Water</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="phone" role="application" aria-label="Clean Water Builder">
+    <div class="top">
+      <div class="logo">
+        <img src="img/cw_logo-horizontal.png" alt="charity: water logo" />
+      </div>
+      <button id="btnReset" class="resetBtn" aria-label="Reset game">Reset</button>
+    </div>
+
+    <div class="scoreCenter" id="scoreCenter">
+      Score: <span id="score">0</span>
+    </div>
+
+    <!-- Speed Up badge -->
+    <div id="boostBadge" class="boostBadge" aria-live="polite" style="display:none;">Speed Up! ⚡</div>
+
+    <!-- ★ 토스트 추가 -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="bars">
+      <div class="bar">
+        <div class="fill" id="timeFill"></div>
+        <div class="label">Timer bar</div>
+      </div>
+      <div class="bar -dual" id="qualityBar">
+        <div class="fill-left" id="cleanFill"></div>
+        <div class="fill-right" id="dirtyFill"></div>
+        <div class="caps">
+          <span id="cleanPct">0%</span>
+          <span id="dirtyPct">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="play" class="play" aria-label="falling water drops area"></div>
+
+    <div id="canWrap" class="canWrap">
+      <div id="can" class="can" aria-label="Jerry can (move left/right)">
+        <img src="img/water-can-transparent.png" alt="Jerry can" />
+      </div>
+    </div>
+
+    <!-- Start modal -->
+    <div id="start" class="backdrop" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <div class="modalHeader">Clean Water Builder</div>
+        <div class="modalBody">
+          <p class="lineTop">Choose a difficulty and press <strong>Start</strong>.</p>
+
+          <!-- Difficulty selector -->
+          <fieldset class="diffSet" aria-label="difficulty selector">
+            <legend>Difficulty</legend>
+            <label class="chip">
+              <input type="radio" name="difficulty" value="easy" checked>
+              <span>Easy</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="difficulty" value="normal">
+              <span>Normal</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="difficulty" value="hard">
+              <span>Hard</span>
+            </label>
+          </fieldset>
+
+          <p class="lineBottom">Catch clean drops, avoid dirty ones and obstacles!</p>
+        </div>
+
+        <!-- 브랜드 링크(About / Donate) -->
+        <div class="row row-links" aria-label="charity: water links">
+          <a class="linkBtn" href="https://www.charitywater.org/" target="_blank" rel="noopener">About charity: water</a>
+          <a class="linkBtn -donate" href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+        </div>
+
+        <div class="row">
+          <button id="btnStart">Start</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- End modal -->
+    <div id="backdrop" class="backdrop" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <div class="modalHeader">Well done! 🎉</div>
+        <div class="modalBody">
+          <p class="lineTop">You Gave Clean Water to</p>
+          <p class="bigNumber" id="peopleNum">0 People!</p>
+          <p class="miniNote">Help more people: <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a></p>
+        </div>
+        <div class="row">
+          <button id="btnReplay">Play Again</button>
+          <button id="btnMenu" class="ghost">Back to Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer links -->
+    <footer class="gameFooter" aria-label="charity: water footer links">
+      <p>
+        Learn more at
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener">charity: water</a>
+        &nbsp;|&nbsp;
+        <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
+      </p>
+    </footer>
+  </div>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
