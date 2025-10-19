@@ -81,7 +81,7 @@ body{
 .bar.-dual .caps{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 6px;font-size:11px;color:#053b5e;font-weight:700}
 
 /* Playfield & motion */
-.play{position:absolute;inset:220px 0 92px 0;overflow:hidden}
+.play{position:absolute;inset:220px 0 0 0;overflow:visible;}
 .drop{position:absolute;top:-60px;display:block;width:48px;height:48px}
 .drop.clean{--c:var(--cw-blue)}
 .drop.dirty{--c:#8b6f5a}
@@ -91,7 +91,7 @@ body{
 
 @keyframes fall {
   from { top: var(--start, -60px); }
-  to   { top: calc(100% - var(--h)); }
+  to   { top: 100%; }
 }
 
 /* Jerry can — 모바일 기본 (사이즈 축소 + 약간 위로) */
